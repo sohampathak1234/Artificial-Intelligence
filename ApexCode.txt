@@ -1,0 +1,16 @@
+#Apex Code Practical 3 Cloud Computing
+
+public class pract3 {
+      public static void updateOlderAccounts(){
+
+            Account[] oldAccounts = [SELECT Id, Description FROM Account ORDER BY CreatedDate ASC LIMIT 5];
+
+            for (Account acct: oldAccounts){
+               acct.Description = 'Heritage Account';
+           }
+           update oldAccounts;
+      }
+}
+
+
+pract3.updateOlderAccounts();
